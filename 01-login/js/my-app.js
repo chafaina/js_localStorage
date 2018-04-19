@@ -8,8 +8,8 @@ $(function(){
 		//
 		$.ajax({type:"POST",
 				//url:"E:/xampp/htdocs/php/login.php",
-				url:"http://sd-1479920-h00001.ferozo.net/public_html/login.php", //http://localhost/php/login.php",
-				data:({usuario:usuario, clave:clave}),
+				url:"http://sd-1479920-h00001.ferozo.net/login.php", //http://localhost/php/login.php",
+				data:({user:usuario, pass:clave}),
 				cache: false,
 				datatype: "text",
 				crossDomain: true,
