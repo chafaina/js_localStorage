@@ -18,21 +18,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 // CONECION A LA BASE DE DATOS
 include "conn.php";
 
-$usuario = "";
-$clave = "";
-if(isset($_POST["usuario"])){
-	$usuario = $_POST["usuario"];
+$user = "";
+$pass = "";
+if(isset($_POST["user"])){
+	$user = $_POST["user"];
 }
 if(isset($_POST["pass"])){
-	$clave = $_POST["pass"];
+	$pass = $_POST["pass"];
 }
-$q = "SELECT * FROM usuario WHERE usuario='".$usuario."' AND pass='".$clave."'";
+$q = "SELECT * FROM usuario WHERE user='".$user."' AND pass='".$pass."'";
 if($r=mysqli_query($conn, $q)){
 	if(mysqli_num_rows($r)>0){
 		$d = mysqli_fetch_array($r,MYSQLI_ASSOC);
-		$data = $d["usuario"]; 
+		$data = $d["user"]; 
 	} else {
-		$data = "ERROR";
+		$data = "ERROR" ;
 	}
 } else {
 	$data = "ERROR";
